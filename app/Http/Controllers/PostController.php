@@ -23,6 +23,12 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'content' => 'required',
+        ]);
+
         $newPost = new Post();
 
         $newPost->user_id = Auth::user()->id;
@@ -42,7 +48,6 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-
         return view('posts.show')->with(compact('post'));
     }
 
@@ -54,6 +59,12 @@ class PostController extends Controller
 
     public function update(Request $request)
     {   
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'post_id' => 'required'
+        ]);
+
         $post = Post::find($request->post_id);
         $post->title = $request->title;
         $post->content = $request->content;

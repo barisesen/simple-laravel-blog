@@ -2,7 +2,7 @@
   <div class="container">
     <nav class="nav blog-nav">
       <a class="nav-link" href="{{ url('/') }}">Home</a>
-      <a class="nav-link" href="#">About</a>
+      <a class="nav-link" href="{{ url('/about') }}">About</a>
        @if (Auth::guest())
           <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
           <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
