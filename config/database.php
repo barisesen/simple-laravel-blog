@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -30,7 +30,22 @@ return [
     | choice installed on your machine before you begin development.
     |
     */
+/*    
+    //// Heroku deploy config db //////
+    'default' => 'pgsql',
 
+    'pgsql' => [
+        'driver'   => 'pgsql',
+        'host'     => parse_url(getenv("DATABASE_URL"))["host"],
+        'database' => substr(parse_url(getenv("DATABASE_URL"))["path"], 1),
+        'username' => parse_url(getenv("DATABASE_URL"))["user"],
+        'password' => parse_url(getenv("DATABASE_URL"))["pass"],
+        'charset'  => 'utf8',
+        'prefix'   => '',
+        'schema'   => 'public',
+    ],
+
+*/
     'connections' => [
 
         'sqlite' => [
@@ -52,8 +67,8 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
-       ],
-/* 
+        ],
+/*
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
