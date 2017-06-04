@@ -1,6 +1,8 @@
 # Simple Laravel Blog
+Demo link [http://learn-laravel-blog.herokuapp.com/](http://learn-laravel-blog.herokuapp.com/)
 
 Laravel is an example of a simple blog when I try to learn.
+
 ## Installation
  - Install laravel environment
  - clone this repo
@@ -29,6 +31,8 @@ Laravel is an example of a simple blog when I try to learn.
   - php artisan make:controller CommentController
   - php artisan make:model Comment
   - php artisan make:migration create_comments_table
+
+
 
 ## Contributors
 - [barisesen](https://github.com/barisesen) Barış Esen - creator, maintainer
