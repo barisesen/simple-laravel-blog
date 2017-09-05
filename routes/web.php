@@ -26,9 +26,9 @@ Route::group(['middleware' => 'auth', 'middleware' => 'admin' ], function () {
 	});
 });
 
-Route::group(['middleware' => 'auth'], function () {
-	Route::post('posts/comment/store', 'CommentController@store');
-	Route::post('posts/comment/destroy', 'CommentController@destroy');
+Route::group(['prefix' => 'posts', 'middleware' => 'auth'], function () {
+	Route::post('/comment/store', 'CommentController@store');
+	Route::post('/comment/destroy', 'CommentController@destroy');
 });
 
 Route::group(['prefix' => 'posts'], function () {
