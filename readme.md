@@ -1,15 +1,6 @@
 # Simple Laravel Blog
 Laravel is an example of a simple blog when I try to learn.
 
-Demo link [http://learn-laravel-blog.herokuapp.com/](http://learn-laravel-blog.herokuapp.com/)
-Admin Account:
-email: test@test.com
-password: 123456
-
-User Account:
-email: uye@test.com
-password: 123456 
-
 ## Installation
  - Install laravel environment
  - clone this repo
